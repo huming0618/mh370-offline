@@ -15,7 +15,7 @@ const REGIONS_PATH = path.join(ROOT, 'public', 'offline-regions.json');
 const WORKERS = 4;
 const DELAY_MS = 180;
 const UA =
-  'MH370OfflineSeeder/1.0 (https://github.com/huming0618/mh370-data; offline pack; contact via GitHub issues)';
+  'MH370OfflineSeeder/1.0 (https://github.com/huming0618/mh370view; offline pack; contact via GitHub issues)';
 
 const OSM_TMPL = (s, z, x, y) => `https://${s}.tile.openstreetmap.org/${z}/${x}/${y}.png`;
 const CARTO_TMPL = (s, z, x, y) =>
@@ -49,7 +49,7 @@ async function fetchTile(z, x, y) {
         headers: {
           'User-Agent': UA,
           Accept: 'image/png,image/*;q=0.8,*/*;q=0.5',
-          Referer: 'https://github.com/huming0618/mh370-data',
+          Referer: 'https://github.com/huming0618/mh370view',
         },
       });
       if (!res.ok) {
@@ -77,9 +77,10 @@ async function fetchTile(z, x, y) {
 async function main() {
   const data = JSON.parse(fs.readFileSync(REGIONS_PATH, 'utf8'));
   const regions = data.regions || [];
-  const zMin = data.zmin ?? 11;
-  // Bundle z11–13 only (~5.6k tiles); z14 left to runtime cache when online
-  const zMax = Math.min(data.zmax ?? 11, 11);
+  const zMin = data.zmin ?? 9;
+  // Optional: MH370_ZMAX=11 for smaller first pack (~fewer tiles than full z12)
+  const envMax = process.env.MH370_ZMAX ? Number(process.env.MH370_ZMAX) : null;
+  const zMax = Math.min(data.zmax ?? 12, Number.isFinite(envMax) ? envMax : 12);
   const tileSet = new Map();
   const regionMeta = [];
 
@@ -177,7 +178,7 @@ async function main() {
     skippedExisting: skipped,
     providersUsed: { osm: osmCount, carto: cartoCount },
     attribution:
-      'Map tiles © OpenStreetMap contributors and/or © CARTO. Bundled for offline Volcano View demo only.',
+      'Map tiles © OpenStreetMap contributors and/or © CARTO. Bundled for offline MH370 View demo only.',
     pathTemplate: 'offline-tiles/{z}/{x}/{y}.png',
     onDiskPngCount: fileCount,
     onDiskBytes: bytes,

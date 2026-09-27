@@ -14,7 +14,7 @@ const OSM_SUBDOMAINS = ['a', 'b', 'c'];
 const CARTO_SUBDOMAINS = ['a', 'b', 'c', 'd'];
 
 /** Bundled offline tiles cover this zoom range (see public/offline-tiles/manifest.json). */
-export const SEEDED_MIN_ZOOM = 6;
+export const SEEDED_MIN_ZOOM = 9;
 export const SEEDED_MAX_ZOOM = 11;
 
 /** Light gray 1×1 PNG — visible “missing” tile vs broken/transparent. */

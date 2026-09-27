@@ -1,36 +1,108 @@
 {
   "generated_at": "2026-09-27 15:10 CST",
-  "policy": "mh370-corridor-and-arc",
-  "zmin": 6,
-  "zmax": 11,
-  "note": "预置马六甲/半岛走廊与第七弧示意带相关 bbox；z 收紧以防包体过大。瓦片加载：预置 → Cache API → OSM → Carto。",
+  "policy": "mh370-corridor",
+  "zmin": 9,
+  "zmax": 12,
+  "note": "mapbuddy regions + OpenNav waypoint refs. Seed: MH370_ZMAX=11 node scripts/download-offline-tiles.js. Load: bundled → Cache API → OSM → Carto.",
+  "waypoints_ref": [
+    {
+      "id": "KLIA",
+      "lat": 2.7456,
+      "lon": 101.7099,
+      "source": "ICAO WMKK / OpenNav approx"
+    },
+    {
+      "id": "IGARI",
+      "lat": 6.936667,
+      "lon": 103.585,
+      "source": "OpenNav IFR waypoint"
+    },
+    {
+      "id": "VAMPI",
+      "lat": 6.182222,
+      "lon": 97.585556,
+      "source": "OpenNav IFR waypoint MY/VAMPI"
+    },
+    {
+      "id": "MEKAR",
+      "lat": 6.503889,
+      "lon": 96.491111,
+      "source": "OpenNav IFR waypoint MY/MEKAR"
+    }
+  ],
   "regions": [
     {
-      "id": "klia-igari",
-      "title": "KLIA–IGARI 走廊",
-      "lat": 5.0,
-      "lon": 102.9,
-      "bbox": { "south": 2.6, "west": 101.5, "north": 7.4, "east": 104.3 },
-      "zmin": 8,
-      "zmax": 10
-    },
-    {
-      "id": "malacca-n571",
-      "title": "马六甲 / N571（VAMPI–MEKAR）",
-      "lat": 6.2,
-      "lon": 98.2,
-      "bbox": { "south": 5.6, "west": 96.3, "north": 6.7, "east": 100.2 },
+      "id": "mh370:sea:malay-malacca",
+      "title": "SEA 走廊 · 马来半岛 / 马六甲",
+      "lat": 4.5,
+      "lon": 101.5,
+      "bbox": {
+        "south": 1.2,
+        "west": 99.2,
+        "north": 8.2,
+        "east": 104.8
+      },
       "zmin": 9,
-      "zmax": 11
+      "zmax": 12,
+      "covers": [
+        "KLIA",
+        "IGARI",
+        "Malacca Strait",
+        "Malay Peninsula"
+      ]
     },
     {
-      "id": "seventh-arc-band",
-      "title": "第七弧优先纬度带（示意）",
+      "id": "mh370:sea:andaman-vampimekar",
+      "title": "SEA 走廊 · 安达曼 / VAMPI–MEKAR",
+      "lat": 7.5,
+      "lon": 94.0,
+      "bbox": {
+        "south": 5.5,
+        "west": 90.5,
+        "north": 10.0,
+        "east": 99.5
+      },
+      "zmin": 9,
+      "zmax": 12,
+      "covers": [
+        "VAMPI",
+        "MEKAR",
+        "northern Sumatra approach"
+      ]
+    },
+    {
+      "id": "mh370:sio:7th-arc-west",
+      "title": "南印度洋第七弧 · 西段",
       "lat": -34.5,
-      "lon": 95.0,
-      "bbox": { "south": -36.2, "west": 88.0, "north": -32.8, "east": 102.0 },
-      "zmin": 6,
-      "zmax": 9
+      "lon": 90.0,
+      "bbox": {
+        "south": -36.5,
+        "west": 85.0,
+        "north": -32.5,
+        "east": 95.0
+      },
+      "zmin": 9,
+      "zmax": 12,
+      "covers": [
+        "7th arc west"
+      ]
+    },
+    {
+      "id": "mh370:sio:7th-arc-east",
+      "title": "南印度洋第七弧 · 东段",
+      "lat": -34.5,
+      "lon": 100.0,
+      "bbox": {
+        "south": -36.5,
+        "west": 94.5,
+        "north": -32.5,
+        "east": 105.0
+      },
+      "zmin": 9,
+      "zmax": 12,
+      "covers": [
+        "7th arc east"
+      ]
     }
   ]
 }
