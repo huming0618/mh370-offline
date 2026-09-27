@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-09-27 15:10 CST",
+  "policy": "mh370-corridor-and-arc",
+  "zmin": 6,
+  "zmax": 11,
+  "note": "预置马六甲/半岛走廊与第七弧示意带相关 bbox；z 收紧以防包体过大。瓦片加载：预置 → Cache API → OSM → Carto。",
+  "regions": [
+    {
+      "id": "klia-igari",
+      "title": "KLIA–IGARI 走廊",
+      "lat": 5.0,
+      "lon": 102.9,
+      "bbox": { "south": 2.6, "west": 101.5, "north": 7.4, "east": 104.3 },
+      "zmin": 8,
+      "zmax": 10
+    },
+    {
+      "id": "malacca-n571",
+      "title": "马六甲 / N571（VAMPI–MEKAR）",
+      "lat": 6.2,
+      "lon": 98.2,
+      "bbox": { "south": 5.6, "west": 96.3, "north": 6.7, "east": 100.2 },
+      "zmin": 9,
+      "zmax": 11
+    },
+    {
+      "id": "seventh-arc-band",
+      "title": "第七弧优先纬度带（示意）",
+      "lat": -34.5,
+      "lon": 95.0,
+      "bbox": { "south": -36.2, "west": 88.0, "north": -32.8, "east": 102.0 },
+      "zmin": 6,
+      "zmax": 9
+    }
+  ]
+}

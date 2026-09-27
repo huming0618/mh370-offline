@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">MH370数据</string>
+    <string name="title_activity_main">MH370数据</string>
+    <string name="package_name">com.huming.mh370offline</string>
+    <string name="custom_url_scheme">com.huming.mh370offline</string>
+</resources>

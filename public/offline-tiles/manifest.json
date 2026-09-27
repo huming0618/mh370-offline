@@ -1,0 +1,56 @@
+{
+  "generatedAt": "2026-09-27T07:05:06.625Z",
+  "zoom": {
+    "min": 6,
+    "max": 11
+  },
+  "policy": "mh370-corridor-and-arc",
+  "regions": [
+    {
+      "id": "klia-igari",
+      "title": "KLIA–IGARI 走廊",
+      "bbox": {
+        "south": 2.6,
+        "west": 101.5,
+        "north": 7.4,
+        "east": 104.3
+      },
+      "tileCount": 190
+    },
+    {
+      "id": "malacca-n571",
+      "title": "马六甲 / N571（VAMPI–MEKAR）",
+      "bbox": {
+        "south": 5.6,
+        "west": 96.3,
+        "north": 6.7,
+        "east": 100.2
+      },
+      "tileCount": 278
+    },
+    {
+      "id": "seventh-arc-band",
+      "title": "第七弧优先纬度带（示意）",
+      "bbox": {
+        "south": -36.2,
+        "west": 88,
+        "north": -32.8,
+        "east": 102
+      },
+      "tileCount": 207
+    }
+  ],
+  "uniqueRequested": 675,
+  "downloadedOk": 675,
+  "failed": 0,
+  "skippedExisting": 0,
+  "providersUsed": {
+    "osm": 0,
+    "carto": 675
+  },
+  "attribution": "Map tiles © OpenStreetMap contributors and/or © CARTO. Bundled for offline Volcano View demo only.",
+  "pathTemplate": "offline-tiles/{z}/{x}/{y}.png",
+  "onDiskPngCount": 675,
+  "onDiskBytes": 1383075,
+  "onDiskMB": 1.32
+}

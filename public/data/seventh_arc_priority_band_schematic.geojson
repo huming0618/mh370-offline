@@ -1,0 +1,45 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ATSB_7th_arc_priority_latitude_band_schematic",
+        "label_zh": "示意优先纬度带，非精确 BTO 几何",
+        "lat_north": -33.0,
+        "lat_south": -36.0,
+        "lon_west": 85.0,
+        "lon_east": 105.0,
+        "source": "https://www.atsb.gov.au/investigations/ae-2014-054",
+        "caveat": "Schematic rectangle spanning ATSB First Principles Review priority latitudes ~33S–36S near Broken Ridge longitudes. NOT a computed BTO ring / 7th-arc polyline."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              85.0,
+              -33.0
+            ],
+            [
+              105.0,
+              -33.0
+            ],
+            [
+              105.0,
+              -36.0
+            ],
+            [
+              85.0,
+              -36.0
+            ],
+            [
+              85.0,
+              -33.0
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
